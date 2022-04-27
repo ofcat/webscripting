@@ -9,7 +9,7 @@ function loadProducts() {
     
     $.ajax({
         type: "GET",
-        url: "/webscripting/logic/read.php",
+        url: "/webscripting/backend/logic/read.php",
         cache: false,
         dataType: "json",
         success: function(response) {
