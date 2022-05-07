@@ -47,11 +47,17 @@
   </head>
   
     <body>
+
+        <ul>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            
+          </ul>
        <section class="Form my-4 mx-5">
             <div class="container">
-                <div class="row no-gutters">
+                <div class="row no-gutters" id = "registrationForm">
                     <div class="col-lg-5">
-                        <img src="lunch.jpg" class="img-fluid" alt="">
+                        <img src="../img/lunch.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-7 px-5 pt-5">
                         <h1 class="font-weight-bold py-3">Sign up</h1>
@@ -108,17 +114,17 @@
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="button" class="btn1">Submit</button>
+                                <button type="submit" class="btn1" id="btn_register">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+                <p id="message"></p>
             </div>
        </section>
         
    
-
+       <script src="../js/userRegistration.js"></script>
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
