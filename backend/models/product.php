@@ -6,7 +6,7 @@ class Products{
     public $name;
     public $description;
     public $price;
-    public $imgPath; 
+    public $img_path; 
 	public $rating; 
     private $conn;
 	

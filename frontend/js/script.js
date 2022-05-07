@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-    loadProducts();
+   // loadProducts();
 })
 
 function loadProducts() { 
