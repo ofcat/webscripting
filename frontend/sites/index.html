@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+         
+
+
+
+        <style>
+            
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+            li {
+                float: left;
+                padding: 10px;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                
+                }
+            #cart{
+                float: right;
+                padding-right: 40px;
+            }
+
+
+            .navbar {
+                border: 0;
+                border-radius: 0;
+                margin-bottom: 0;
+                font-size: 18px;
+                background-color: black;
+            }
+            .navbar-nav  li a:hover {
+                color: white;
+            }
+
+
+
+
+
+            
+            
+
+
+
+            *{
+                padding: 5px;
+                margin: 0; 
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #8dbc8a;
+            }
+
+            h1, h4, p{
+                text-align: center;
+                padding: 20px;
+            }
+            .row{
+                background-color: white;
+                border-radius: 30px;
+                margin-top: 60px;
+            }
+            img{
+                max-width:100%;
+                max-height:100%;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+            .btn1{
+                border: none;
+                outline: none;
+                height: 50px;
+                width: 100%;
+                background-color: #8dbc8a;
+                color: white;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+            
+
+
+        </style>
+
+    
+    </head>
+
+    <body>
+
+        
+        <div>
+            <ul class="nav">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="userList.html">User Management</a></li>
+                <li id="cart"><a href="shoppingCart"><img src="ShoppingCart.html" style="width:30px;"> Cart</a></li>
+            </ul>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-5">
+                        <img src="lunch.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-7 px-5 pt-5">
+                        <h1 class="font-weight-bold py-3">LunchBreak</h1>
+                        <h4>Eat LunchBreak</h4>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <p>LunchBreak is a web service that provides customers with the opportunity to purchase organic lunch boxes. There are three categories of lunches: meat, vegetarian and vegan. </p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <button id="myButton" type="button" class="btn1">Buy now</button>
+                                <script type="text/javascript">
+                                    document.getElementById("myButton").onclick = function () {
+                                        location.href = "products.html"
+                                    }
+                                </script>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+
+        
+        
+    </body>
+
+
+</html>
