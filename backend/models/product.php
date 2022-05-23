@@ -39,7 +39,7 @@ class Products{
 		$this->rating = htmlspecialchars(strip_tags($this->rating));
 		
 		
-		$stmt->bind_param("ssiis", $this->name, $this->description, $this->price, $this->img_path, $this->rating);
+		$stmt->bind_param("ssisi", $this->name, $this->description, $this->price, $this->img_path, $this->rating);
 		
 		if($stmt->execute()){
 			return true;
@@ -62,7 +62,7 @@ class Products{
 		$this->category_id = htmlspecialchars(strip_tags($this->img_path));
 		$this->created = htmlspecialchars(strip_tags($this->rating));
 	 
-		$stmt->bind_param("ssiisi", $this->name, $this->description, $this->price, $this->img_path, $this->rating, $this->id);
+		$stmt->bind_param("ssisii", $this->name, $this->description, $this->price, $this->img_path, $this->rating, $this->id);
 		
 		if($stmt->execute()){
 			return true;
