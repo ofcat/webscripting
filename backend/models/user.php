@@ -65,7 +65,8 @@ class Users{
 			UPDATE ".$this->usersTable." 
 			SET fname= ?, lname = ?, address = ?, notes = ?, country = ?, city = ?, zipcode = ?, email = ?, password = ?, pnumber = ?
 			WHERE id = ?");
-	 
+
+			$this->id = htmlspecialchars(strip_tags($this->id));
             $this->fname = htmlspecialchars(strip_tags($this->fname));
             $this->lname = htmlspecialchars(strip_tags($this->lname));
             $this->address = htmlspecialchars(strip_tags($this->address));
@@ -77,8 +78,8 @@ class Users{
             $this->password = htmlspecialchars(strip_tags($this->password));
             $this->pnumber = htmlspecialchars(strip_tags($this->pnumber));
 	 
-            $stmt->bind_param("ssssssissi", $this->fname, $this->lname, $this->address, $this->notes, 
-            $this->country, $this->city, $this->zipcode, $this->email, $this->password, $this->pnumber);
+            $stmt->bind_param("ssssssissii", $this->fname, $this->lname, $this->address, $this->notes, 
+            $this->country, $this->city, $this->zipcode, $this->email, $this->password, $this->pnumber, $this->id);
 
 		if($stmt->execute()){
 			return true;
@@ -102,6 +103,16 @@ class Users{
 		}
 	 
 		return false;		 
+	}
+
+	function fetch(){
+
+			$stmt = $this->conn->prepare("SELECT * FROM ".$this->usersTable." WHERE id = ?");
+			$stmt->bind_param("i", $this->id);					
+			
+		$stmt->execute();			
+		$result = $stmt->get_result();		
+		return $result;	
 	}
 }
 ?>
