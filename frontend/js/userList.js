@@ -32,8 +32,8 @@ $(function() {
                                     + "<td>" + e.email + "</td>"
                                     + "<td>" + e.password + "</td>"
                                     + "<td>" + e.pnumber + "</td>"
-                                    + "<td><input type='button' name='edit' value='Edit' id="+ e.id+ " class='btn btn-info btn-xs edit_data'/></td>"
-                                    + "<td><button type='submit' class='btn1' id='btn_delete'>Delete</button></td></tr>"
+                                    + "<td><input type='button' name='edit' value='Edit' id="+ e.id+ " class='btn btn-info edit_data'/></td>"
+                                    + "<td><button type='button' class='btn btn-danger btn_delete' id="+ e.id+ ">Delete</button></td></tr>"
                                     
                                     
                                     );
@@ -156,11 +156,40 @@ $(function() {
                    $('#add_data_Modal').modal('hide');  
                    //$('#tblUsers').html(data);  
                    $("#tblUsers tbody").empty();
-                   $("#tblUsers tbody").append(" <tr><td colspan='12' class='text-center'>&lt;No data loaded&gt;</td></tr>");
+                   $("#tblUsers tbody").append(" <tr><td colspan='12' class='text-center'>&lt;Please update the table!&gt;</td></tr>");
               }  
          });  
    // }  
-});  
+}); 
+
+
+$(document).on('click', '.btn_delete', function(){  
+
+    var id = $(this).attr("id");  
+    
+
+    console.log("delete");
+    console.log(id);
+
+    var datas = JSON.stringify({
+        id:id,
+        
+       });
+
+    $.ajax({
+        url: '/webscripting/backend/logic/userDelete.php',
+        type: 'DELETE',
+        dataType:"json",  
+        data: datas,
+        success: function(result) {
+            // Do something with the result
+            $("#tblUsers tbody").empty();
+            $("#tblUsers tbody").append(" <tr><td colspan='12' class='text-center'>&lt;Please update the table!&gt;</td></tr>");
+        }
+    });
+
+});
+
 
 });
 

@@ -18,7 +18,7 @@ $data = json_decode(file_get_contents("php://input"));
 
 if(!empty($data->id)) {
 	$users->id = $data->id;
-	
+
 	if($users->delete()){    
 		http_response_code(200); 
 		echo json_encode(array("message" => "Item was deleted."));
