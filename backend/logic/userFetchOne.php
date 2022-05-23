@@ -11,10 +11,9 @@ $db = $database->getConnection();
  
 $items = new Users($db);
 
-//$items->id = $_POST['id'];
-//$items->id = $_GET['id'];
-$items->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '';
-//$id = isset($_GET['id']) ? $_GET['id'] : '';
+
+//$items->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : ''; //this
+
 $items->id = (isset($_POST['id']) ? $_POST['id'] : '');
 
 $result = $items->fetch();

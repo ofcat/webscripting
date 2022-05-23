@@ -11,13 +11,15 @@ include_once '../models/user.php';
 $database = new Database();
 $db = $database->getConnection();
  
-$items = new Items($db);
+$users = new Users($db);
+//$users->id = (isset($_POST['id']) ? $_POST['id'] : '');
  
 $data = json_decode(file_get_contents("php://input"));
 
 if(!empty($data->id)) {
-	$items->id = $data->id;
-	if($items->delete()){    
+	$users->id = $data->id;
+	
+	if($users->delete()){    
 		http_response_code(200); 
 		echo json_encode(array("message" => "Item was deleted."));
 	} else {    

@@ -11,14 +11,16 @@ include_once '../models/product.php';
 $database = new Database();
 $db = $database->getConnection();
  
-$items = new Items($db);
+$products = new Products($db);
+//$products->id = (isset($_POST['id']) ? $_POST['id'] : '');
  
 $data = json_decode(file_get_contents("php://input"));
 
-if(!empty($data->name) && !empty($data->description) &&
+if(!empty($data->id) &&!empty($data->name) && !empty($data->description) &&
 !empty($data->price) && !empty($data->img_path) &&
 !empty($data->rating)){    
 
+	$products->id = $data->id;
     $products->name = $data->name;
     $products->description = $data->description;
     $products->price = $data->price;
@@ -26,16 +28,16 @@ if(!empty($data->name) && !empty($data->description) &&
     $products->rating = $data->rating;	
 	
 	
-	if($items->update()){     
+	if($products->update()){     
 		http_response_code(200);   
-		echo json_encode(array("message" => "Item was updated."));
+		echo json_encode(array("message" => "Product was updated."));
 	}else{    
 		http_response_code(503);     
-		echo json_encode(array("message" => "Unable to update items."));
+		echo json_encode(array("message" => "Unable to update products."));
 	}
 	
 } else {
 	http_response_code(400);    
-    echo json_encode(array("message" => "Unable to update items. Data is incomplete."));
+    echo json_encode(array("message" => "Unable to update products. Data is incomplete."));
 }
 ?>

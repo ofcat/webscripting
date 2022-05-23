@@ -12,7 +12,7 @@ $database = new Database();
 $db = $database->getConnection();
  
 $users = new Users($db);
-$users->id = (isset($_POST['id']) ? $_POST['id'] : '');
+//$users->id = (isset($_POST['id']) ? $_POST['id'] : '');
  
 $data = json_decode(file_get_contents("php://input"));
 
