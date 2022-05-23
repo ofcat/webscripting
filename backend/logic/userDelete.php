@@ -6,26 +6,28 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
  
 include_once '../config/dbacess.php';
-include_once '../models/product.php';
+include_once '../models/user.php';
  
 $database = new Database();
 $db = $database->getConnection();
  
-$product = new Products($db);
+$users = new Users($db);
+//$users->id = (isset($_POST['id']) ? $_POST['id'] : '');
  
 $data = json_decode(file_get_contents("php://input"));
 
 if(!empty($data->id)) {
-	$product->id = $data->id;
-	if($product->delete()){    
+	$users->id = $data->id;
+
+	if($users->delete()){    
 		http_response_code(200); 
-		echo json_encode(array("message" => "Product was deleted."));
+		echo json_encode(array("message" => "Item was deleted."));
 	} else {    
 		http_response_code(503);   
-		echo json_encode(array("message" => "Unable to delete product."));
+		echo json_encode(array("message" => "Unable to delete item."));
 	}
 } else {
 	http_response_code(400);    
-    echo json_encode(array("message" => "Unable to delete products. Data is incomplete."));
+    echo json_encode(array("message" => "Unable to delete items. Data is incomplete."));
 }
 ?>
