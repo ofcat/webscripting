@@ -24,8 +24,9 @@ function loadProducts() {
 
         $.each(response.items, function(i, p) {
 
-        $('#productList').append('<div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">\
-      <div class="product-content product-wrap clearfix">\
+        $('#productList').append(
+    '<div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">\
+        <div class="product-content product-wrap clearfix">\
             <div class="row">\
                     <div class="col-md-5 col-sm-12 col-xs-12">\
                         <div class="product-image"> \

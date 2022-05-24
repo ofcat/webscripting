@@ -21,14 +21,31 @@
         h1, h4 {
             padding: 15px;
             color: white;
+            text-align: center;
         }
 
         h4 {
             padding-bottom: 30px;
         }
+
         .container {
-            align-self: center;
+            padding-left: 5px;
+            padding-right: 5px;
         }
+
+    
+
+        #btn1, #btn2, #btn3{
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            background-color: #8dbc8a;
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
 
         
         .navbar-brand{
@@ -52,7 +69,6 @@
         .footer-list a {
             color: gray;
             padding: 10px;
-
         }
         .footer-list a:hover {
             color:white;
@@ -78,38 +94,71 @@
             </ul>
         </div>
     </nav>
-    <!--
-        FAQ Contact us 
-        Order polocy, returns and refunds
-        My Account
-        
-    -->
+      
+    
+    <h1>Help</h1>
+    <h4>We love to help</h4>
 
-    <div class="container-fluid text-center bg-grey">
-        <h1>Help</h1>
-        <h4>We love to help</h4>
-        <div class="row justify-content-sm-center">
-            <div class="col-sm-3">
+    
+    <div class="container text-center">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-sm-4">
                 <div class="thumbnail">
                     <p><strong>FAQ</strong></p>
                     <p></p>
                 </div>
+
             </div>
-            <div class="col-sm-3">
+
+            <div class="col-sm-4">
                 <div class="thumbnail">
-                    <p><strong>Order Policy</strong></p>
-                    <p></p>
+                    <p><strong>Order polocy, returns and refunds</strong></p>
+                    <p><strong>Order polocy</strong></p>
+                    <p>Our order are usually delivered on the next day, if ordered until 6pm</p><br>
+                    <p><strong>Returns</strong></p>
+                    <p>Our products can be returned for free if returned the day after they were delivered</p><br>
+                    <p><strong>Refunds</strong></p>
+                    <p>Refunds can only be given if products are returned one day after delivery. Refunds will be given back within four working days</p>
                 </div>
+
             </div>
-            <div class="col-sm-3">
+
+            <div class="col-sm-4">
                 <div class="thumbnail">
                     <p><strong>My account</strong></p>
-                    <p></p>
+                    <p>If you would like to manage your account. Go to profile management or click the button below.</p>
+                    <button type="button" id="btn1">Account management</button>
+                        <script type="text/javascript">
+                            document.getElementById("btn1").onclick = function () {
+                                location.href = "profileManagement.html"
+                            }
+                        </script>
+                    <br>
+                    <br>
+                    <p>If you have an account and are not yet logged in yet please log in.</p>
+                    <button type="button" id="btn2">Login</button>
+                        <script type="text/javascript">
+                            document.getElementById("btn2").onclick = function () {
+                                location.href = "login.html"
+                            }
+                        </script>
+                    <br>
+                    <br>    
+                    <p>Otherwise please create an account with us</p>
+                    <button type="button" id="btn3">Create Account</button>
+                        <script type="text/javascript">
+                            document.getElementById("btn3").onclick = function () {
+                                location.href = "login.html"
+                            }
+                        </script>
                 </div>
+
             </div>
         </div>
+
     </div>
     
+
     <div class="footer">
         <ul>
             <li class="footer-list"><a href="Impressum.html">Impressum</a></li>

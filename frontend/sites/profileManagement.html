@@ -13,54 +13,72 @@
 
 
 
-        <!-- Style -->
-    <style>
-        body{
-            background-color: #8dbc8a;
-        }
+        <style>
+            .col-lg-7{
+                padding: 5px;
+            }
+            #box{
+                padding: 5px;
+                margin: 0; 
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #8dbc8a;
 
-        h1, h4 {
-            padding: 15px;
-            color: white;
-        }
+            }
+            
+            h1, h4 {
+                padding-left: 15px;
+            }
+            .row{
+                background-color: white;
+                border-radius: 30px;
+            }
+            img{
+                max-width:100%;
+                max-height:100%;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+                padding: 10px;
+                padding: 15px 15px;
+            }
+            #btn1{
+                border: none;
+                outline: none;
+                height: 50px;
+                width: 100%;
+                background-color: #8dbc8a;
+                color: white;
+                border-radius: 4px;
+                font-weight: bold;
+            }
 
-        h4 {
-            padding-bottom: 30px;
-        }
-        .container {
-            padding-left: 25%; 
-        }
+            .navbar-brand{
+                font-size: 20px;
+            }            
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: black;
+                color: white;
+                text-align: center;
+                background-image: none;
+            }
+            .footer-list{
+                display: inline;
+            }
+            .footer-list a {
+                color: gray;
+                padding: 10px;
 
-        
-        .navbar-brand{
-            font-size: 20px;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: black;
-            color: white;
-            text-align: center;
-            background-image: none;
-    
-        }
-        .footer-list{
-            display: inline;
-        }
-        .footer-list a {
-            color: gray;
-            padding: 10px;
-
-        }
-        .footer-list a:hover {
-            color:white;
-            text-decoration: none;
-        }
-       
-    </style>
+            }
+            .footer-list a:hover {
+                color:white;
+                text-decoration: none;
+            }
+        </style>
 
    
     </head>
@@ -81,6 +99,78 @@
                 </ul>
             </div>
         </nav>
+
+
+
+        <section class="Form my-4 mx-5">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-5">
+                        <img src="../img/lunch.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-7 px-5 pt-5">
+                        <h1 class="font-weight-bold py-3">Profile Management</h1>
+                        <h4>Edit your personal data</h4>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="fname" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="address" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="notes" placeholder="Addtional information to address">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="country" placeholder="Austria" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="city" placeholder="Vienna" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="zip" placeholder="Zip Code">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="email" class="form-control" id="email" placeholder="E-mail Address">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" class="form-control" id="number" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <button type="button" class="btn1" id="btn1">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
 
         <div class="footer">
             <ul>

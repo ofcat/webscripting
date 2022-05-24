@@ -44,6 +44,31 @@
             text-align: center;
         }
 
+        .navbar-brand{
+            font-size: 20px;
+        } 
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            background-image: none;
+        }
+        .footer-list{
+            display: inline;
+        }
+        .footer-list a {
+            color: gray;
+            padding: 10px;
+
+        }
+        .footer-list a:hover {
+            color:white;
+            text-decoration: none;
+        }
         
        
     </style>
@@ -52,6 +77,22 @@
   </head>
   
     <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">LunchBreak</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="products.html" style="font-size: 15px;">Products</a></li>
+                    <li><a href="registration.html" style="font-size: 15px;">Registration</a></li>
+                    <li><a href="profileManagement.html" style="font-size: 15px;">Profile Management</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="shoppingCart.html" style="font-size: 15px;"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 22px;"></span> Cart</a></li>
+                    <li><a href="login.html" style="font-size: 15px;"><span class="glyphicon glyphicon-log-in" style="font-size: 22px;"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="container">
             <h1>PRODUCTS</h1>
             <h4>Shop all lunch boxes!</h4>
@@ -66,6 +107,16 @@
         
    
             <script src="../js/productList.js"></script>
+
+        <div class="footer">
+            <ul>
+                <li class="footer-list"><a href="Impressum.html">Impressum</a></li>
+                <li class="footer-list"><a href="help.html">Help</a></li>
+                 <li class="footer-list"><a href="contact.html">Contact</a></li>
+            </ul>
+                
+                
+        </div>
 
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
