@@ -13,53 +13,48 @@ $database = new Database();
 $db = $database->getConnection();
  
 $items = new Users($db);
-
-//$items->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
-//$items->id = (isset($_POST['id']) ? $_POST['id'] : '');
-
-$result = $items->read();
-
-$data = json_decode(file_get_contents("php://input"));
-
-// $error = array();
-// $res = array();
-
-if (!empty($data)) {
-    if ($data[9] === $result[1]){
-        
-    }
-}
+$items->email= (isset($_POST['email']) ? $_POST['email'] : '');
+$items->password = (isset($_POST['password']) ? $_POST['password'] : '');
 
 
+$result = $items->getUserInfo();
 
-if (count($error) > 0) {
-    $resp['msg'] = $error;
-    $resp['status'] = false;
-    echo json_encode($resp);
-    exit;
-}
+if($result->num_rows > 0){    
+    // $itemRecords=array();
+    // $itemRecords["users"]=array(); 
+	while ($item = $result->fetch_assoc()) { 	
+        extract($item); 
+        $itemDetails=array(
+            
+            "email" => $email,            
+			"password" => $password	
+        ); 
+       //array_push($itemRecords["users"], $itemDetails);
+    }   } 
 
-// $statement = $db->prepare("select * from users where email = :email");
-// $statement->execute(array(':email' => $_POST['email']));
-// $row = $statement->fetchAll(PDO::FETCH_ASSOC);
-if (count($row) > 0) {
-    if (!password_verify($_POST['password'], $row[0]['password'])) {
-        $error[] = "Password is not valid";
-        $resp['msg'] = $error;
-        $resp['status'] = false;
-        echo json_encode($resp);
-        exit;
-    }
-    session_start();
-    $_SESSION['id'] = $row[0]['id'];
-    $resp['redirect'] = "products.html";
-    $resp['status'] = true;
-    echo json_encode($resp);
-    exit;
-} else {
-    $error[] = "Email does not match";
-    $resp['msg'] = $error;
-    $resp['status'] = false;
-    echo json_encode($resp);
-    exit;
-}
+//$data = json_decode(file_get_contents("php://input"));
+
+ if($_POST['email'] == $itemDetails['email'] && $_POST['password'] == $itemDetails['password'])
+ {
+  $_SESSION['email']=$itemDetails['email'];
+  echo "success";
+  var_dump($_SESSION['email']);
+  var_dump($itemDetails);
+  var_dump($_POST['email']);
+ }
+ else
+ {
+  echo "fail";
+  var_dump($itemDetails);
+//   echo "<div class='form'>
+//   <h3>Incorrect Username/password.</h3><br/>
+//   <p class='link'>Click here to <a href='Login.php'>Login</a> again.</p>
+//   </div>";
+  
+ }
+ exit();
+
+
+
+
+
