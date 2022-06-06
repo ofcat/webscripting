@@ -49,13 +49,13 @@
   
     <body>
 
-        <ul>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="registration.html">Registration</a></li>
-            <li><a href="userList.html">User Management</a></li>
-            <li><a href="productUpdate.html">Product Management</a></li>
-            <li><a href="loginPage.html">Login</a></li>
-          </ul>
+    <ul>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="registration.php">Registration</a></li>
+        <li><a href="userList.php">User Management</a></li>
+        <li><a href="productUpdate.php">Product Management</a></li>
+        <li><a href="loginPage.php">Login</a></li>
+      </ul>
        <section class="Form my-4 mx-5">
             <div class="container">
                 <div class="row no-gutters" id = "registrationForm">
