@@ -29,6 +29,11 @@
         body {
             background-color: #8dbc8a;
         }
+        .container {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 30px;
+        }
 </style>
 <body>
 <?php include 'includes/header.php' ?>
