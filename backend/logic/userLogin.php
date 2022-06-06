@@ -44,6 +44,7 @@ if ($_POST['email'] == $itemDetails['email'] && $_POST['password'] == $itemDetai
 } else {
     echo "fail";
     var_dump($itemDetails);
+   header('Location: ../frontend/sites/loginPage.php');
     //   echo "<div class='form'>
     //   <h3>Incorrect Username/password.</h3><br/>
     //   <p class='link'>Click here to <a href='Login.php'>Login</a> again.</p>

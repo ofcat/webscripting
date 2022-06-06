@@ -25,7 +25,7 @@ $("#loginBtn").on("click", function() {
             
         },
         error: function(e) {
-            alert("error");
+            alert("Check your email or password!");
           
            // $('.modal-content').append('<p style="color:red; text-align: center;"> there was an error </p>');
         } 

@@ -10,6 +10,20 @@ unset($_SESSION['email']);
 session_destroy();
 header('Refresh: 1; URL =products.php');
 ?>
+<style>
+   * {
+      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
+   }
+
+   body {
+      background-color: #8dbc8a;
+   }
+
+   
+</style>
+
 
 <div class="container">
    <h3 class="text-center">You will be logged out now!</h3>

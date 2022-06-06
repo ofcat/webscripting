@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
     <link href="res/style.css" rel="stylesheet">
     
 
-    <title>AJAX Fill Table</title>
+    <title>Product Management</title>
 </head>
 
 <style>
@@ -18,20 +20,23 @@
             margin: 0;
             box-sizing: border-box;
         } */
+        * {
+            padding: 5px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #8dbc8a;
+        }
 </style>
 <body>
-<ul>
-        <li><a href="products.php">Products</a></li>
-        <li><a href="registration.php">Registration</a></li>
-        <li><a href="userList.php">User Management</a></li>
-        <li><a href="productUpdate.php">Product Management</a></li>
-        <li><a href="loginPage.php">Login</a></li>
-      </ul>
+<?php include 'includes/header.php' ?>
 
     <div class="container">
         <div class="row m-5">
             <div class="col">
-                <h1>User list</h1>
+                <h1>Products list</h1>
                 <p>
                    All LunchBreak products:
                 </p>                

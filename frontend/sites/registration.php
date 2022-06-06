@@ -49,13 +49,7 @@
   
     <body>
 
-    <ul>
-        <li><a href="products.php">Products</a></li>
-        <li><a href="registration.php">Registration</a></li>
-        <li><a href="userList.php">User Management</a></li>
-        <li><a href="productUpdate.php">Product Management</a></li>
-        <li><a href="loginPage.php">Login</a></li>
-      </ul>
+    <?php include 'includes/header.php' ?>
        <section class="Form my-4 mx-5">
             <div class="container">
                 <div class="row no-gutters" id = "registrationForm">

@@ -40,10 +40,11 @@
     <div class="topnav">
         <a class="active" href="#home">Home</a>
         <a href="products.php">Products</a>
-        <a href="registration.php">Registration</a>
+        
 
         <?php if (!isset($_SESSION["email"])) { ?>
             <a href="loginPage.php">Login</a>
+            <a href="registration.php">Registration</a>
         <?php } ?>
 
         <?php if (isset($_SESSION["email"])) { ?>
@@ -51,7 +52,7 @@
             <a href="profileManagement.php">Update Profile</a>
         <?php } ?>
 
-        <?php if (isset($_SESSION["email"]) && $_SESSION["email"] == 'admin@mail.com') { ?>
+        <?php if (isset($_SESSION["email"]) && $_SESSION["email"] == 'admin') { ?>
             <a href="userList.php">User Management</a>
             <a href="productUpdate.php">Product Management</a>
         <?php } ?>
