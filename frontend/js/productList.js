@@ -151,7 +151,7 @@ $('#insert').on("click", function () {
 
     var url = "/webscripting/backend/logic/productUpdate.php";
     var id = $('#employee_id').val();
-    if (id == null) {
+    if (id == '') {
         url = "/webscripting/backend/logic/create.php";
     }
     var name = $('#name').val();
