@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +20,23 @@
             margin: 0;
             box-sizing: border-box;
         } */
+        * {
+            padding: 5px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #8dbc8a;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 30px;
+        }
 </style>
 <body>
-    <ul>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="registration.html">Registration</a></li>
-        <li><a href="userList.html">User Management</a></li>
-        <li><a href="productUpdate.html">Product Management</a></li>
-      </ul>
+<?php include 'includes/header.php' ?>
 
     <div class="container">
         <div class="row m-5">

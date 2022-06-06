@@ -60,6 +60,7 @@ $(function() {
                 data: datas,
                 success: function(response){
                     $('#message').html(response);
+                    window.location.href="loginPage.php";
                 },
                 error: function(e) {
                     $('#message').append('<p style="color:red; text-align: center;"> there was an error </p>');

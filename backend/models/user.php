@@ -114,5 +114,15 @@ class Users{
 		$result = $stmt->get_result();		
 		return $result;	
 	}
+
+	function getUserInfo() {
+		$stmt = $this->conn->prepare("SELECT * FROM ".$this->usersTable." WHERE email = ? and password = ?");
+		$stmt->bind_param("ss", $this->email, $this->password);
+
+
+		$stmt->execute();			
+		$result = $stmt->get_result();		
+		return $result;	
+	}
 }
 ?>

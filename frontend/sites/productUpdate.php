@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
     <link href="res/style.css" rel="stylesheet">
     
 
-    <title>AJAX Fill Table</title>
+    <title>Product Management</title>
 </head>
 
 <style>
@@ -18,19 +20,28 @@
             margin: 0;
             box-sizing: border-box;
         } */
+        * {
+            padding: 5px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #8dbc8a;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 30px;
+        }
 </style>
 <body>
-    <ul>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="registration.html">Registration</a></li>
-        <li><a href="userList.html">User Management</a></li>
-        <li><a href="productUpdate.html">Product Management</a></li>
-      </ul>
+<?php include 'includes/header.php' ?>
 
     <div class="container">
         <div class="row m-5">
             <div class="col">
-                <h1>User list</h1>
+                <h1>Products list</h1>
                 <p>
                    All LunchBreak products:
                 </p>                
@@ -40,6 +51,7 @@
 
         <div class="row m-5">
             <div class="col-12 text-end">
+                <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">Add Products</button>
                 <button id="btnAllProducts" type="button" class="btn btn-primary">Update table</button>
             </div>
             <div class="col-12">
