@@ -47,12 +47,15 @@
             <a href="registration.php">Registration</a>
         <?php } ?>
 
-        <?php if (isset($_SESSION["email"])) { ?>
+        <?php if (isset($_SESSION["email"]) && $_SESSION["email"] !== 'admin') { ?>
             <a href="logout.php">Logout</a>
             <a href="profileManagement.php">Update Profile</a>
+            <a href="#">Cart</a>
+            <a href="#">Orders</a>
         <?php } ?>
 
         <?php if (isset($_SESSION["email"]) && $_SESSION["email"] == 'admin') { ?>
+            <a href="logout.php">Logout</a>
             <a href="userList.php">User Management</a>
             <a href="productUpdate.php">Product Management</a>
         <?php } ?>

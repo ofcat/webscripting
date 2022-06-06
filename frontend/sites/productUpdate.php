@@ -51,6 +51,7 @@
 
         <div class="row m-5">
             <div class="col-12 text-end">
+                <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">Add Products</button>
                 <button id="btnAllProducts" type="button" class="btn btn-primary">Update table</button>
             </div>
             <div class="col-12">
