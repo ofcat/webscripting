@@ -100,7 +100,17 @@
                 <ul class="nav navbar-nav">
                     <li><a href="products.html" style="font-size: 15px;">Products</a></li>
                     <li><a href="registration.html" style="font-size: 15px;">Registration</a></li>
-                    <li><a href="profileManagement.html" style="font-size: 15px;">Profile Management</a></li>
+                    <?php 
+                    if(isset($_SESSION["email"])) {
+
+                        echo "<li><a href="profileManagement.html" style="font-size: 15px;">Profile Management</a></li>"
+                    }
+                    if(isset($_SESSION["email"])) { // how to make exclusively for admin
+                        echo "<li><a href="profileManagement.html" style="font-size: 15px;">Profile Management</a></li>"
+                    }
+                    ?>
+
+                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="shoppingCart.html" style="font-size: 15px;"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 22px;"></span> Cart</a></li>
