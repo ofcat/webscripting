@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,21 +20,30 @@
             margin: 0;
             box-sizing: border-box;
         } */
+        * {
+            padding: 5px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #8dbc8a;
+        }
+        .container {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 30px;
+        }
 </style>
 <body>
-    <ul>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="registration.html">Registration</a></li>
-        <li><a href="userList.html">User Management</a></li>
-        <li><a href="productUpdate.html">Product Management</a></li>
-      </ul>
+<?php include 'includes/header.php' ?>
 
     <div class="container">
         <div class="row m-5">
             <div class="col">
                 <h1>User list</h1>
                 <p>
-                   All LunchBreak products:
+                   All LunchBreak users:
                 </p>                
             </div>
         </div>
@@ -40,19 +51,25 @@
 
         <div class="row m-5">
             <div class="col-12 text-end">
-                <button id="btnAllProducts" type="button" class="btn btn-primary">Update table</button>
+                <button id="btnAllUsers" type="button" class="btn btn-primary">Update table</button>
             </div>
             <div class="col-12">
                 <table id="tblUsers" class="table table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Image Path</th>
-                            <th>Rating</th>
-                        
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>Note</th>
+                            <th>Country</th>
+                            <th>City</th>
+                            <th>Zipcode</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Phone Number</th>
+                            
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -68,7 +85,7 @@
              <div class="modal-content">  
                   <div class="modal-header">  
                        <button type="button" class="close" data-dismiss="modal">&times;</button>  
-                       <h4 class="modal-title">Product Details</h4>  
+                       <h4 class="modal-title">User Details</h4>  
                   </div>  
                   <div class="modal-body" id="employee_detail">  
                   </div>  
@@ -83,37 +100,63 @@
              <div class="modal-content">  
                   <div class="modal-header">  
                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>  
-                       <h4 class="modal-title">Update Product Info</h4>  
+                       <h4 class="modal-title">Update User Info</h4>  
                   </div>  
                   <div class="modal-body">  
                        <form method="post" id="insert_form">  
                             <label>Enter New Info</label>  
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="name" placeholder="Name" name="input1">
+                                    <input type="text" class="form-control" id="fname" placeholder="First Name" name="input1">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="description" placeholder="Description" name="input2">
+                                    <input type="text" class="form-control" id="lname" placeholder="Last Name" name="input2">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="price" placeholder="Price" name="input3">
+                                    <input type="text" class="form-control" id="address" placeholder="Address" name="input3">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="img_path" placeholder="Image Path" name="input4">
+                                    <input type="text" class="form-control" id="notes" placeholder="Addtional information to address" name="input4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" class="form-control" id="rating" placeholder="Rating">
+                                    <input type="text" class="form-control" id="country" placeholder="Austria" value= "Austria"readonly name="input5">
                                 </div>
                             </div>
-                            
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="text" class="form-control" id="city" placeholder="Vienna" value="Vienna"readonly name="input6">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="text" class="form-control" id="zipcode" placeholder="Zip Code" name="input7">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail Address" name="input8">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" name="input9">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-lg-7">
+                                    <input type="text" class="form-control" id="pnumber" placeholder="Phone number" name="input10">
+                                </div>
+                            </div>
+        
+
 
                             <input type="hidden" name="employee_id" id="employee_id" />  
                             <input type="button" name="insert" id="insert" value="Insert" class="btn btn-success" />  
@@ -131,7 +174,7 @@
  <!-- jQuery -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
  <!-- custom Javascript -->
- <script src="../js/productList.js"></script>
+ <script src="../js/userList.js"></script>
    
 </body>
 </html>
