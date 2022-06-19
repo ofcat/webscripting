@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Shopping Cart</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-        
+        <script src="../js/cart.js" async></script>
 
         <style>
             body{
@@ -59,13 +59,12 @@
                         <th class="text-center py-3 px-4" style="min-width: 400px;">Product Name &amp; Details</th>
                         <th class="text-right py-3 px-4" style="width: 100px;">Price</th>
                         <th class="text-center py-3 px-4" style="width: 120px;">Quantity</th>
-                        <th class="text-right py-3 px-4" style="width: 100px;">Total</th>
                         <th class="text-center align-middle py-3 px-0" style="width: 40px;"><a href="#" class="shop-tooltip float-none text-light" title="" data-original-title="Clear cart"><i class="ino ion-md-trash"></i></a></th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="cart-item">
             
-                      <tr>
+                      <tr class="cart-row">
                         <td class="p-4">
                           <div class="media align-items-center">
                             <img src="../img/Meat.JPG" class="d-block ui-w-40 ui-bordered mr-4" alt="">
@@ -78,13 +77,12 @@
                             </div>
                           </div>
                         </td>
-                        <td class="text-right font-weight-semibold align-middle p-4">€16,99</td>
-                        <td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
-                        <td class="text-right font-weight-semibold align-middle p-4">€16,99</td>
+                        <td class="text-right font-weight-semibold align-middle p-4 cart-price">€16.99</td>
+                        <td class="align-middle p-4"><input type="text" class="cart-quantity form-control text-center" value="1"></td>
                         <td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
                       </tr>
             
-                      <tr>
+                      <tr class="cart-row">
                         <td class="p-4">
                           <div class="media align-items-center">
                             <img src="../img/Vegan.JPG" class="d-block ui-w-40 ui-bordered mr-4" alt="">
@@ -97,13 +95,12 @@
                             </div>
                           </div>
                         </td>
-                        <td class="text-right font-weight-semibold align-middle p-4">€11,99</td>
-                        <td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
-                        <td class="text-right font-weight-semibold align-middle p-4">€11,99</td>
+                        <td class="text-right font-weight-semibold align-middle p-4 cart-price">€11.99</td>
+                        <td class="align-middle p-4"><input type="text" class="cart-quantity form-control text-center" value="1"></td>
                         <td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
                       </tr>
             
-                      <tr>
+                      <tr class="cart-row">
                         <td class="p-4">
                           <div class="media align-items-center">
                             <img src="../img/Fish.JPG" class="d-block ui-w-40 ui-bordered mr-4" alt="">
@@ -116,9 +113,8 @@
                             </div>
                           </div>
                         </td>
-                        <td class="text-right font-weight-semibold align-middle p-4">€18,99</td>
-                        <td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
-                        <td class="text-right font-weight-semibold align-middle p-4">€18,99</td>
+                        <td class="text-right font-weight-semibold align-middle p-4 cart-price" >€18.99</td>
+                        <td class="align-middle p-4"><input type="text" class="cart-quantity form-control text-center" value="1"></td>
                         <td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
                       </tr>
             
@@ -139,7 +135,7 @@
                     </div>
                     <div class="text-right mt-4">
                       <label class="text-muted font-weight-normal m-0">Total price</label>
-                      <div class="text-large"><strong>€47.97</strong></div>
+                      <div class="text-large cart-total-price"><strong>€47.97</strong></div>
                     </div>
                   </div>
                 </div>
