@@ -59,6 +59,5 @@
             <a href="userList.php">User Management</a>
             <a href="productUpdate.php">Product Management</a>
             <a href="ordersAdmin.php">All Orders</a>
-            <a href="orders.php">Orders</a>
         <?php } ?>
     </div>

@@ -63,11 +63,9 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Amount</th>
-                            <th>Total</th> 
-                            <th>Date</th>                            
+                            <th>Date</th>
+                            <th>Show Details</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -79,7 +77,49 @@
             </div>
         </div>
     
-    </div>
+    </div>   
+    <div id="add_data_Modal" class="modal fade">  
+        <div class="modal-dialog">  
+             <div class="modal-content">  
+                  <div class="modal-header">  
+                       <button type="button" class="close" data-bs-dismiss="modal">&times;</button>  
+                       <h4 class="modal-title">Order Details</h4>  
+                  </div>  
+                  <div class="modal-body">  
+                       <form method="post" id="insert_form">  
+                            <label>Here are all the products you ordered</label>  
+                            <div class="col-12">
+                            <table id="tblOrdersDetail" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Amount</th>
+                                        <th>Total</th>
+                                        <th>Date</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan='12' class="text-center">&lt;You have made no orders&gt;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+
+
+                            <input type="hidden" name="employee_id" id="employee_id" />  
+                            
+                       </form>  
+                  </div>  
+                  <div class="modal-footer">  
+                       <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>  
+                  </div>  
+             </div>  
+        </div>  
+   </div>
+     
 
     
     
@@ -89,7 +129,9 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- custom Javascript -->
-    <script src="../js/.js"></script>
+    <script src="../js/orderList.js" ></script> 
+    
+    
 
 </body>
 

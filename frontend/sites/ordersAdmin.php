@@ -45,8 +45,8 @@
     <div class="container">
         <div class="row m-5">
             <div class="col">
-                <h1>Orders list</h1>
-                <p>
+                <h1 id="Heading">Orders list</h1>
+                <p id="Greeting">
                     Here are all the orders made
                 
                 </p>
@@ -66,6 +66,7 @@
                             <th>Date</th>
                             <th>UserId</th>
                             <th>Show Details</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -77,10 +78,49 @@
             </div>
         </div>
     
-    </div>
+    </div>   
+    <div id="add_data_Modal" class="modal fade">  
+        <div class="modal-dialog">  
+             <div class="modal-content">  
+                  <div class="modal-header">  
+                       <button type="button" class="close" data-bs-dismiss="modal">&times;</button>  
+                       <h4 class="modal-title">Order Details</h4>  
+                  </div>  
+                  <div class="modal-body">  
+                       <form method="post" id="insert_form">  
+                            <label>Here are all the products you ordered</label>  
+                            <div class="col-12">
+                            <table id="tblOrdersDetail" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Amount</th>
+                                        <th>Total</th>
+                                        <th>Date</th> 
+                                        <th>UserId</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan='12' class="text-center">&lt;You have made no orders&gt;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
 
-    
-    
+
+                            <input type="hidden" name="employee_id" id="employee_id" />  
+                            
+                       </form>  
+                  </div>  
+                  <div class="modal-footer">  
+                       <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>  
+                  </div>  
+             </div>  
+        </div>  
+   </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

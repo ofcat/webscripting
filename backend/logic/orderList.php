@@ -12,10 +12,7 @@ $db = $database->getConnection();
 
 $items = new Order($db); 
 
-
-
 $items->id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
-
 
 $result = $items->readUserOrder();
 
