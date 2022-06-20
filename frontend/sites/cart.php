@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,6 +47,7 @@
 
     </head>
 <body>
+<?php include 'includes/header.php' ?>
     <div class="container px-3 my-5 clearfix">
         <!-- Shopping cart table -->
         <div class="card">
