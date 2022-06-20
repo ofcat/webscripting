@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 06, 2022 at 05:10 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Erstellungszeit: 20. Jun 2022 um 12:13
+-- Server-Version: 10.4.24-MariaDB
+-- PHP-Version: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,53 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `webDB`
+-- Datenbank: `webdb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Tabellenstruktur für Tabelle `orders`
+--
+
+CREATE TABLE `orders` (
+  `Id` int(11) NOT NULL,
+  `Zeitpunkt` date NOT NULL,
+  `UserId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `orders`
+--
+
+INSERT INTO `orders` (`Id`, `Zeitpunkt`, `UserId`) VALUES
+(1, '2022-06-14', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `order_contains_product`
+--
+
+CREATE TABLE `order_contains_product` (
+  `Id` int(11) NOT NULL,
+  `OrderId` int(11) NOT NULL,
+  `ProductId` int(11) NOT NULL,
+  `Amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `order_contains_product`
+--
+
+INSERT INTO `order_contains_product` (`Id`, `OrderId`, `ProductId`, `Amount`) VALUES
+(1, 1, 6, 2),
+(2, 1, 7, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `products`
 --
 
 CREATE TABLE `products` (
@@ -38,7 +77,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `products`
+-- Daten für Tabelle `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `img_path`, `rating`) VALUES
@@ -52,7 +91,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `img_path`, `ratin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabellenstruktur für Tabelle `users`
 --
 
 CREATE TABLE `users` (
@@ -70,7 +109,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Daten für Tabelle `users`
 --
 
 INSERT INTO `users` (`id`, `fname`, `lname`, `address`, `notes`, `country`, `city`, `zipcode`, `email`, `password`, `pnumber`) VALUES
@@ -82,33 +121,57 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `address`, `notes`, `country`, `cit
 (24, 'reg', 'reg', 'ere', 'ere', 'Austria', 'Vienna', 21312, 'reg@mail.com', '123456', 123);
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `products`
+-- Indizes für die Tabelle `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indizes für die Tabelle `order_contains_product`
+--
+ALTER TABLE `order_contains_product`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indizes für die Tabelle `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indizes für die Tabelle `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT für Tabelle `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT für Tabelle `order_contains_product`
+--
+ALTER TABLE `order_contains_product`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT für Tabelle `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;

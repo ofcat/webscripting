@@ -37,6 +37,7 @@ if ($result->num_rows > 0) {
 
 if ($_POST['email'] == $itemDetails['email'] && $_POST['password'] == $itemDetails['password']) {
     $_SESSION['email'] = $itemDetails['email'];
+    $_SESSION['id'] = $itemDetails['id']; 
     echo "success";
     var_dump($_SESSION['email']);
     var_dump($itemDetails);
@@ -51,4 +52,5 @@ if ($_POST['email'] == $itemDetails['email'] && $_POST['password'] == $itemDetai
     //   </div>";
 
 }
+
 exit();
