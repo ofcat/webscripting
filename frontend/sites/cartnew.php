@@ -160,7 +160,10 @@ if (isset($_POST['remove'])){
                     </div>
                 </div>
                 <div class="form-group">
-                <button type="button" id="BuyBtn" class="btn1">Buy</button>
+                <form method="POST" action="purchase.php">
+                    <button type="submit" id="BuyBtn" class="btn1">Buy</button>
+                </form>
+                
             </div>
             </div>
 
